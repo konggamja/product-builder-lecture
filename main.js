@@ -6,7 +6,7 @@ class LottoNumbers extends HTMLElement {
         wrapper.setAttribute('class', 'numbers-wrapper');
 
         const style = document.createElement('style');
-        style.textContent = \`
+        style.textContent = `
             .numbers-wrapper {
                 display: flex;
                 gap: 10px;
@@ -34,7 +34,7 @@ class LottoNumbers extends HTMLElement {
                     font-size: 1.2em;
                 }
             }
-        \`;
+        `;
 
         shadow.appendChild(style);
         shadow.appendChild(wrapper);
@@ -42,13 +42,15 @@ class LottoNumbers extends HTMLElement {
 
     set numbers(numbers) {
         const wrapper = this.shadowRoot.querySelector('.numbers-wrapper');
-        wrapper.innerHTML = '';
-        numbers.sort((a, b) => a - b).forEach(number => {
-            const ball = document.createElement('div');
-            ball.setAttribute('class', 'number-ball');
-            ball.textContent = number;
-            wrapper.appendChild(ball);
-        });
+        if (wrapper) {
+            wrapper.innerHTML = '';
+            numbers.sort((a, b) => a - b).forEach(number => {
+                const ball = document.createElement('div');
+                ball.setAttribute('class', 'number-ball');
+                ball.textContent = number;
+                wrapper.appendChild(ball);
+            });
+        }
     }
 }
 
@@ -94,7 +96,9 @@ function generateLottoNumbers() {
 }
 
 // Initial generation
-const initialElement = document.querySelector('lotto-numbers');
-if (initialElement) {
-    initialElement.numbers = generateLottoNumbers();
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const initialElement = document.querySelector('lotto-numbers');
+    if (initialElement) {
+        initialElement.numbers = generateLottoNumbers();
+    }
+});
