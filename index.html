@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>축의금 가이드 - 얼마나 내야 할까?</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <button id="theme-toggle" title="Toggle Theme">🌙</button>
-        <h1>Lotto Number Generator</h1>
-        <div class="lotto-container">
-            <lotto-numbers></lotto-numbers>
+        <button id="theme-toggle" title="테마 전환">🌙</button>
+        <div id="app">
+            <h1>축의금 가이드 🧧</h1>
+            <p class="subtitle">적절한 축의금 금액을 알려드려요.</p>
+            
+            <div id="question-container" class="card">
+                <div id="question-text">질문을 불러오는 중...</div>
+                <div id="options-container"></div>
+            </div>
+
+            <div id="result-container" class="card hidden">
+                <h2>추천 축의금</h2>
+                <div id="final-amount">0원</div>
+                <p id="result-desc"></p>
+                <button id="restart-btn">다시 계산하기</button>
+            </div>
         </div>
-        <button id="generate-btn">Generate Numbers</button>
     </div>
     <script src="main.js"></script>
 </body>
