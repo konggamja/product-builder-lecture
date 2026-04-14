@@ -155,7 +155,7 @@ function showResult() {
         emoji = "👌";
     } else {
         comment = "축하하는 진심을 담아 전달해 보세요.";
-        emoji = "🧧";
+        emoji = "💵";
     }
 
     resultDesc.innerHTML = `<div class="result-emoji">${emoji}</div>${comment}`;
