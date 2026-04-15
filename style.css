@@ -9,6 +9,7 @@
     --btn-hover: #ff7675;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     --progress-bg: #dfe6e9;
+    --gold: #d4af37;
     --nav-height: 70px;
 }
 
@@ -16,7 +17,7 @@ body.dark-mode {
     --bg-color: #1a1a1a;
     --card-bg: #2d2d2d;
     --primary-color: #ff7675;
-    --secondary-color: #2d3436;
+    --secondary-color: #444;
     --text-main: #dfe6e9;
     --text-sub: #b2bec3;
     --btn-bg: #3d3d3d;
@@ -65,7 +66,7 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 900;
     color: var(--primary-color);
     text-decoration: none;
@@ -81,7 +82,7 @@ body {
     text-decoration: none;
     color: var(--text-main);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: color 0.2s;
 }
 
@@ -99,7 +100,7 @@ body {
 }
 
 .section-padding {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 /* Calculator Card */
@@ -111,7 +112,7 @@ body {
 .card {
     background: var(--card-bg);
     border-radius: 28px;
-    padding: 50px 35px;
+    padding: 40px 25px;
     box-shadow: var(--shadow);
     text-align: center;
     transition: all 0.3s ease;
@@ -119,7 +120,7 @@ body {
 
 .hidden { display: none !important; }
 
-h1 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 800; }
+h1 { font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; }
 .subtitle { font-size: 1rem; color: var(--text-sub); margin-bottom: 40px; }
 
 .main-btn {
@@ -130,39 +131,115 @@ h1 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 800; }
 }
 .main-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
-#question-text { font-size: 1.25rem; font-weight: 700; margin-bottom: 35px; line-height: 1.4; }
-.option-btn { width: 100%; background-color: var(--btn-bg); border: none; padding: 18px; margin-bottom: 12px; border-radius: 14px; font-size: 1rem; color: var(--text-main); cursor: pointer; transition: 0.2s; }
+#question-text { font-size: 1.25rem; font-weight: 700; margin-bottom: 30px; line-height: 1.4; }
+.option-btn { width: 100%; background-color: var(--btn-bg); border: none; padding: 18px; margin-bottom: 12px; border-radius: 14px; font-size: 1rem; color: var(--text-main); cursor: pointer; transition: 0.2s; font-weight: 500; }
 .option-btn:hover { background-color: var(--btn-hover); color: white; }
-.progress-bar { width: 100%; height: 6px; background: var(--progress-bg); border-radius: 10px; margin-bottom: 40px; overflow: hidden; }
+.progress-bar { width: 100%; height: 6px; background: var(--progress-bg); border-radius: 10px; margin-bottom: 30px; overflow: hidden; }
 #progress { height: 100%; background: var(--primary-color); transition: width 0.4s ease; }
-#final-amount { font-size: 3rem; font-weight: 900; color: var(--primary-color); margin: 30px 0; }
+
+/* 결과 화면 - 청첩장 스타일 */
+.invitation-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    color: #333 !important;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.invitation-inner {
+    border: 2px solid var(--gold);
+    padding: 30px 20px;
+    border-radius: 8px;
+    background: #fffdf9;
+}
+
+.invitation-header {
+    margin-bottom: 20px;
+}
+
+.invitation-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.invitation-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    font-weight: bold;
+    margin: 0;
+}
+
+.invitation-content {
+    margin: 30px 0;
+}
+
+.invitation-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.invitation-amount {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #222;
+    margin: 10px 0;
+}
+
+.invitation-divider {
+    width: 50px;
+    height: 1px;
+    background: var(--gold);
+    margin: 25px auto;
+}
+
+.invitation-message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    word-break: keep-all;
+}
+
+.invitation-footer {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.app-url {
+    font-size: 0.7rem;
+    color: #aaa;
+    margin-top: 15px;
+}
+
 .share-group { display: flex; gap: 10px; margin-top: 25px; }
 .action-btn { flex: 1; border: none; padding: 15px; border-radius: 12px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
-.save-btn { background: #f1f2f6; }
+.save-btn { background: #f1f2f6; color: #333; }
+.copy-btn { background: #eee; color: #333; }
+
 .secondary-btn { background: none; border: 1px solid var(--text-sub); color: var(--text-sub); padding: 12px; border-radius: 10px; margin-top: 15px; width: 100%; cursor: pointer; }
 
 /* ✍️ Blog Section Styles */
-.section-title { font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 10px; }
-.section-subtitle { text-align: center; color: var(--text-sub); margin-bottom: 40px; }
-.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-.blog-card { background: var(--card-bg); padding: 30px; border-radius: 24px; box-shadow: var(--shadow); transition: transform 0.3s ease; text-align: left; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.blog-card { background: var(--card-bg); padding: 25px; border-radius: 24px; box-shadow: var(--shadow); transition: transform 0.2s; text-align: left; text-decoration: none; display: block; color: inherit; }
 .blog-card:hover { transform: translateY(-5px); }
-.blog-tag { display: inline-block; background: var(--secondary-color); color: #856404; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 15px; }
-.blog-card h3 { font-size: 1.2rem; margin-bottom: 15px; line-height: 1.4; font-weight: 700; color: var(--text-main); }
-.blog-card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 20px; line-height: 1.6; }
+.blog-tag { display: inline-block; background: var(--secondary-color); color: #856404; padding: 4px 10px; border-radius: 10px; font-size: 0.75rem; margin-bottom: 10px; }
+.blog-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--text-main); }
+.blog-card p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 15px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* 🚩 Footer Styles */
-footer { margin-top: 60px; padding: 50px 20px; background: var(--card-bg); width: 100%; border-top: 1px solid rgba(0,0,0,0.05); }
-.footer-content { max-width: 1000px; margin: 0 auto; text-align: center; }
-.footer-links { margin-top: 20px; display: flex; justify-content: center; gap: 25px; }
-.footer-links a { color: var(--text-sub); text-decoration: none; font-size: 0.9rem; }
-.footer-links a:hover { color: var(--primary-color); }
+footer { margin-top: 60px; padding: 40px 20px; border-top: 1px solid rgba(0,0,0,0.05); }
+.footer-content { text-align: center; }
+.footer-links { margin-top: 15px; }
+.footer-links a { margin: 0 10px; text-decoration: none; color: var(--text-sub); font-size: 0.85rem; }
 
-/* Theme Toggle */
-#theme-toggle { position: fixed; bottom: 30px; right: 30px; background: var(--card-bg); border: none; width: 50px; height: 50px; border-radius: 10px; cursor: pointer; font-size: 1.2rem; color: var(--text-main); box-shadow: var(--shadow); }
+/* Theme Toggle Button */
+#theme-toggle { position: fixed; bottom: 20px; right: 20px; padding: 10px; border-radius: 50%; z-index: 1001; }
 
 @media (max-width: 480px) {
-    .container { padding-top: 60px; }
-    .footer-links { flex-direction: column; gap: 10px; }
+    .container { padding: 20px 15px; }
     .nav-menu { display: none; }
 }
