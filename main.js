@@ -160,21 +160,6 @@ function showResult() {
 
     resultDesc.innerHTML = `<div class="result-emoji">${emoji}</div>${comment}`;
 
-    // 링크 업데이트 (실제로 작동하는 링크들)
-    const adTitle = document.getElementById('ad-title');
-    const adLink = document.getElementById('ad-link');
-    
-    if (!isAttending) {
-        adTitle.textContent = "불참의 미안함을 담은 기프티콘 선물하기";
-        adLink.href = "https://search.shopping.naver.com/search/all?query=%EB%AA%A8%EB%B0%94%EC%9D%BC+%EA%B8%B0%ED%94%84%ED%8B%B0%EC%BD%98";
-    } else if (userRelationship === '절친' || userRelationship === '가족') {
-        adTitle.textContent = "가까운 사이라면? 인기 신혼 선물 BEST";
-        adLink.href = "https://search.shopping.naver.com/search/all?query=%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80+%EC%A7%91%EB%93%A4%EC%9D%B4+%EC%84%A0%EB%AC%BC";
-    } else {
-        adTitle.textContent = "센스 있는 결혼 축하 선물 구경하기";
-        adLink.href = "https://search.shopping.naver.com/search/all?query=%EA%B2%B0%ED%98%BC%EC%B6%95%ED%95%98%EC%84%A0%EB%AC%BC";
-    }
-
     // 통계 업데이트
     const statsText = document.getElementById('stats-text');
     const statsFill = document.getElementById('stats-fill');
@@ -187,7 +172,7 @@ function showResult() {
 document.getElementById('save-img-btn').onclick = () => {
     const captureArea = document.getElementById('capture-area');
     html2canvas(captureArea, {
-        backgroundColor: document.body.classList.contains('light-mode') ? '#2d2d2d' : '#ffffff',
+        backgroundColor: document.body.classList.contains('light-mode') ? '#ffffff' : '#2d2d2d',
         scale: 2
     }).then(canvas => {
         const link = document.createElement('a');
@@ -212,6 +197,6 @@ document.getElementById('restart-btn').onclick = () => {
 
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.onclick = () => {
-    document.body.classList.toggle('light-mode');
-    themeToggle.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+    document.body.classList.toggle('dark-mode'); // default is light, so toggle dark-mode class
+    themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 };

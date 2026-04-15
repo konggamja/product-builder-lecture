@@ -15,26 +15,30 @@
 body.dark-mode {
     --bg-color: #1a1a1a;
     --card-bg: #2d2d2d;
-    --primary-color: #0984e3;
+    --primary-color: #ff7675;
     --secondary-color: #2d3436;
     --text-main: #dfe6e9;
     --text-sub: #b2bec3;
     --btn-bg: #3d3d3d;
-    --btn-hover: #0984e3;
+    --btn-hover: #ff7675;
     --shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     --progress-bg: #444444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Pretendard', -apple-system, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
-    margin: 0;
-    line-height: 1.6;
-    transition: background-color 0.3s ease;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    transition: background-color 0.3s ease;
 }
 
 /* 🧭 Navigation Bar */
@@ -46,15 +50,17 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    align-items: center;
 }
 
 .nav-content {
     max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
     padding: 0 20px;
 }
 
@@ -68,9 +74,7 @@ body {
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+    gap: 20px;
 }
 
 .nav-menu a {
@@ -91,6 +95,7 @@ body {
     margin: var(--nav-height) auto 0;
     padding: 40px 20px;
     flex: 1;
+    width: 100%;
 }
 
 .section-padding {
@@ -126,7 +131,7 @@ h1 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 800; }
 .main-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
 #question-text { font-size: 1.25rem; font-weight: 700; margin-bottom: 35px; line-height: 1.4; }
-.option-btn { width: 100%; background-color: var(--btn-bg); border: none; padding: 18px; margin-bottom: 12px; border-radius: 14px; font-size: 1rem; cursor: pointer; transition: 0.2s; }
+.option-btn { width: 100%; background-color: var(--btn-bg); border: none; padding: 18px; margin-bottom: 12px; border-radius: 14px; font-size: 1rem; color: var(--text-main); cursor: pointer; transition: 0.2s; }
 .option-btn:hover { background-color: var(--btn-hover); color: white; }
 .progress-bar { width: 100%; height: 6px; background: var(--progress-bg); border-radius: 10px; margin-bottom: 40px; overflow: hidden; }
 #progress { height: 100%; background: var(--primary-color); transition: width 0.4s ease; }
@@ -134,20 +139,17 @@ h1 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 800; }
 .share-group { display: flex; gap: 10px; margin-top: 25px; }
 .action-btn { flex: 1; border: none; padding: 15px; border-radius: 12px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 .save-btn { background: #f1f2f6; }
-.ad-box { margin-top: 25px; text-align: left; background: #fff9e6; padding: 15px; border-radius: 15px; border: 1px dashed #ffd32a; }
-.ad-label { font-size: 0.85rem; font-weight: 700; margin: 0 0 10px 0; color: #ffa801; }
-.ad-item { display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; }
-.ftc-disclaimer { font-size: 0.7rem; color: var(--text-sub); margin-top: 15px; }
 .secondary-btn { background: none; border: 1px solid var(--text-sub); color: var(--text-sub); padding: 12px; border-radius: 10px; margin-top: 15px; width: 100%; cursor: pointer; }
 
 /* ✍️ Blog Section Styles */
+.section-title { font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 10px; }
+.section-subtitle { text-align: center; color: var(--text-sub); margin-bottom: 40px; }
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
 .blog-card { background: var(--card-bg); padding: 30px; border-radius: 24px; box-shadow: var(--shadow); transition: transform 0.3s ease; text-align: left; }
 .blog-card:hover { transform: translateY(-5px); }
-.blog-tag { display: inline-block; background: var(--secondary-color); color: #cc8e35; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 15px; }
-.blog-card h3 { font-size: 1.2rem; margin-bottom: 15px; line-height: 1.4; font-weight: 700; }
-.blog-card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 20px; }
-.read-more { color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+.blog-tag { display: inline-block; background: var(--secondary-color); color: #856404; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 15px; }
+.blog-card h3 { font-size: 1.2rem; margin-bottom: 15px; line-height: 1.4; font-weight: 700; color: var(--text-main); }
+.blog-card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 20px; line-height: 1.6; }
 
 /* 🚩 Footer Styles */
 footer { margin-top: 60px; padding: 50px 20px; background: var(--card-bg); width: 100%; border-top: 1px solid rgba(0,0,0,0.05); }
@@ -161,7 +163,6 @@ footer { margin-top: 60px; padding: 50px 20px; background: var(--card-bg); width
 
 @media (max-width: 480px) {
     .container { padding-top: 60px; }
-    .guide-card { padding: 30px 20px; }
     .footer-links { flex-direction: column; gap: 10px; }
     .nav-menu { display: none; }
 }
