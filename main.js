@@ -172,7 +172,7 @@ function showResult() {
 document.getElementById('save-img-btn').onclick = () => {
     const captureArea = document.getElementById('capture-area');
     html2canvas(captureArea, {
-        backgroundColor: document.body.classList.contains('light-mode') ? '#ffffff' : '#2d2d2d',
+        backgroundColor: document.body.classList.contains('dark-mode') ? '#2d2d2d' : '#ffffff',
         scale: 2
     }).then(canvas => {
         const link = document.createElement('a');
@@ -197,6 +197,16 @@ document.getElementById('restart-btn').onclick = () => {
 
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.onclick = () => {
-    document.body.classList.toggle('dark-mode'); // default is light, so toggle dark-mode class
+    document.body.classList.toggle('dark-mode');
     themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 };
+
+// Smooth Scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
